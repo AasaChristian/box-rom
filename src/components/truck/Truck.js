@@ -1,3 +1,4 @@
+import Load from "./Load";
 
 
 function Truck() {
@@ -10,12 +11,15 @@ function Truck() {
   return (
 
     <div>
-        {yard.map((x) => {
+        {yard.map((x, i) => {
             console.log(x, "x")
 
             return(
-                <section>
-                    <div>Trailor {x.trailer} </div>                   
+                <section key = {i}>
+                    <div>Trailor {x.trailer} </div> 
+                    <Load 
+                    load = {x.load}
+                    />                  
                 </section>
             )
         })}
