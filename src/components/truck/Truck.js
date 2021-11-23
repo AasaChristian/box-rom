@@ -16,7 +16,7 @@ function Truck() {
 
             return(
                 <section key = {i}>
-                    <div>Trailor {x.trailer} </div> 
+                    <div><h1>Trailor {x.trailer}</h1> </div> 
                     <Load 
                     load = {x.load}
                     />                  
