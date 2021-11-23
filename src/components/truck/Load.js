@@ -11,8 +11,8 @@ console.log(load, "load load")
 
         return(
             <div key = {i} style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                <h1> Id {x[0]}</h1>
-                <h1> Count {x[1]}</h1>
+                <h2> Id {x[0]}</h2>
+                <h2> Count {x[1]}</h2>
             </div>
         )
     })}
