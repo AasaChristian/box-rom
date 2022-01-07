@@ -1,9 +1,9 @@
 
 // This is the initial state prior to fetching
 const initialState = {
-trucks :[],
-loads : []
-    
+trailers :[],
+loads : [],
+materials: []   
       };
 
 
