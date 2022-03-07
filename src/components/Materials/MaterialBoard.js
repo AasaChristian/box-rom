@@ -16,10 +16,14 @@ const [newMaterial, setNewMaterial] = useState({
     tagNumber: " ",
     materialname: " "
 })
+const [selectedMaterial, setSelectedMaterial] = useState(0)
 
 const handleChange = e => {
     setNewMaterial({...newMaterial, [e.target.name]: e.target.value})
 }
+
+
+
 
 const sendMaterial = (e) => {
     e.preventDefault()
@@ -54,11 +58,29 @@ const sendMaterial = (e) => {
             </section>
             <section style={{display: 'flex', flexDirection: 'column ', justifyContent: 'space-around', width: '70%', height: "100%"}}>
                 {materials.map((material) => {
-                    const {materialname, tagNumber} = material
+                    const {materialname, tagNumber, id} = material
+
+                    const selectMaterial = e => {
+                        e.preventDefault()
+                        if (selectedMaterial === null){
+                            setSelectedMaterial(id)
+                        } else{
+                            setSelectedMaterial(null)
+                        } 
+                    
+                    }
                     return(
-                <section style={{display: 'flex', justifyContent: 'space-between'}}>
+                <section key={id} style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"}} onClick={selectMaterial} style={ selectedMaterial === id? {backgroundColor: 'red'}: {display: 'inherit'}}>
+                   <section style={{display:'flex', justifyContent: 'space-between', width: "100%"}}>                    
                     <div>{tagNumber}</div>
                     <div>{materialname}</div>
+                    </section>
+                   <section style={ selectedMaterial === id?  {display:'flex', justifyContent: 'center'}: {display: 'none'}}>
+                       <form>
+                           <button>Delete</button>
+                       </form>
+                       </section> 
+
                 </section>                    )
                 })}
             </section>
