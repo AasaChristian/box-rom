@@ -14,7 +14,9 @@ function App(props) {
 
 console.log(materials, "materials")
 
-
+const createNewMaterial = ((newMaterial) => {
+  createMaterial(newMaterial)
+})
   return (
     <div className="App">
       <section>
@@ -25,6 +27,7 @@ console.log(materials, "materials")
 
 <MaterialBoard
 materials = {materials}
+createNewMaterial = {createNewMaterial}
 />
 
 
