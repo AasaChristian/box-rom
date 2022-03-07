@@ -8,15 +8,18 @@ import { fetchMaterial, createMaterial } from './actions/materialActions';
 function App(props) {
 
   const {materials, fetchMaterial, createMaterial} = props
-  useEffect(() => {
-    fetchMaterial()
-}, [createMaterial])
+
+  const createNewMaterial = ((newMaterial) => {
+    createMaterial(newMaterial)
+  })
+
+//   useEffect(() => {
+//     fetchMaterial()
+// }, [])
 
 console.log(materials, "materials")
 
-const createNewMaterial = ((newMaterial) => {
-  createMaterial(newMaterial)
-})
+
   return (
     <div className="App">
       <section>
@@ -26,7 +29,6 @@ const createNewMaterial = ((newMaterial) => {
 /> */}
 
 <MaterialBoard
-materials = {materials}
 createNewMaterial = {createNewMaterial}
 />
 
