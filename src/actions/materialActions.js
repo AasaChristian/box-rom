@@ -15,15 +15,15 @@ export const fetchMaterial = () => dispatch => {
     };
 
 export const createMaterial = (material) => dispatch => {
+    console.log(material, "material; action")
         axios.post(`${axiosAddress}/api/materials/add`, material)
-        .then(res => {
-            dispatch({type: Create_Material, payload: res.data})
-        }).catch(error => console.log(error, "createMaterial action error"))
+        .then(res =>  dispatch({type: Create_Material, payload: res.data}))
+        .catch(error => console.log(error, "createMaterial action error"))
     }
 
-// export const deleteMaterial = (id) => dispatch => {
-//     axios.delete()
-//     .then(res => {
-//         dispatch({type: Delete_Material, payload: id})
-//     }).catch(error => console.log(error, "deleteMaterial action error"))
-// }
+export const deleteMaterial = (id) => dispatch => {
+    axios.delete()
+    .then(res => {
+        dispatch({type: Delete_Material, payload: id})
+    }).catch(error => console.log(error, "deleteMaterial action error"))
+}
