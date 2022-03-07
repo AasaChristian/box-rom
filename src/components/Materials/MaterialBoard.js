@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux';
+import { fetchMaterial, createMaterial } from '../../actions/materialActions';
+
 
 function MaterialBoard(props){
-const {materials, createNewMaterial} = props
+const {materials, createNewMaterial, fetchMaterial} = props
+
+useEffect(() => {
+    fetchMaterial()
+}, [])
+
+console.log(materials, "is it materials?")
 
 const [newMaterial, setNewMaterial] = useState({
     tagNumber: " ",
@@ -19,6 +28,10 @@ const sendMaterial = (e) => {
         materialname: newMaterial.materialname
     }
     createNewMaterial(newMaterialObj)
+    setNewMaterial({
+        tagNumber: " ",
+        materialname: " "
+    })
 }
     return(
         <div style={{display: 'flex',flexDirection: 'column ', alignItems: 'center', width: '100%', height: '500px'}}>
@@ -54,4 +67,11 @@ const sendMaterial = (e) => {
     )
 };
 
-export default MaterialBoard
+const mapStateToProps = state => {
+    return {
+          materials: state.materials,
+          loading: state.loading
+    };
+  };
+
+export default connect(mapStateToProps, {fetchMaterial, createMaterial})(MaterialBoard);
