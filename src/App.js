@@ -3,16 +3,18 @@ import { useState, useEffect } from "react";
 import { connect } from 'react-redux';
 import Trailer from './components/trailer/Trailer';
 import MaterialBoard from './components/Materials/MaterialBoard'
-import { fetchMaterial } from './actions/materialActions';
+import { fetchMaterial, createMaterial } from './actions/materialActions';
 
 function App(props) {
 
-  const {materials, fetchMaterial} = props
+  const {materials, fetchMaterial, createMaterial} = props
   useEffect(() => {
     fetchMaterial()
-}, [])
+}, [createMaterial])
 
 console.log(materials, "materials")
+
+
   return (
     <div className="App">
       <section>
@@ -38,4 +40,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {fetchMaterial})(App);
+export default connect(mapStateToProps, {fetchMaterial, createMaterial})(App);
