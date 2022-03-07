@@ -14,12 +14,12 @@ export const fetchMaterial = () => dispatch => {
             
     };
 
-// export const createMaterial = (material) => dispatch => {
-//         axios.post(`${'x'}`, material)
-//         .then(res => {
-//             dispatch({type: Create_Material, payload: res.data})
-//         }).catch(error => console.log(error, "createMaterial action error"))
-//     }
+export const createMaterial = (material) => dispatch => {
+        axios.post(`${axiosAddress}/api/materials/add`, material)
+        .then(res => {
+            dispatch({type: Create_Material, payload: res.data})
+        }).catch(error => console.log(error, "createMaterial action error"))
+    }
 
 // export const deleteMaterial = (id) => dispatch => {
 //     axios.delete()
