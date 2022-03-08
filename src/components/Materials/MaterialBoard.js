@@ -70,7 +70,7 @@ const sendMaterial = (e) => {
                     
                     }
                     return(
-                <section key={id} style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"}} onClick={selectMaterial} style={ selectedMaterial === id? {backgroundColor: 'red'}: {display: 'inherit'}}>
+                <section key={id} style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"} | selectedMaterial === id? {backgroundColor: 'red'}: {display: 'inherit'}} onClick={selectMaterial} >
                    <section style={{display:'flex', justifyContent: 'space-between', width: "100%"}}>                    
                     <div>{tagNumber}</div>
                     <div>{materialname}</div>
