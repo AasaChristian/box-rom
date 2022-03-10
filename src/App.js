@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { connect } from 'react-redux';
 import Trailer from './components/trailer/Trailer';
 import MaterialBoard from './components/Materials/MaterialBoard'
+import ImgInput from './components/ImgInput'
 import { fetchMaterial, createMaterial } from './actions/materialActions';
 
 function App(props) {
@@ -31,6 +32,7 @@ console.log(materials, "materials")
 <MaterialBoard
 createNewMaterial = {createNewMaterial}
 />
+<ImgInput/>
 
 
     </div>
