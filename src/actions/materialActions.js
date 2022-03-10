@@ -22,8 +22,9 @@ export const createMaterial = (material) => dispatch => {
     }
 
 export const deleteMaterial = (id) => dispatch => {
-    axios.delete()
+    axios.delete(`${axiosAddress}/api/materials/remove/${id}`)
     .then(res => {
+        console.log("delete action")
         dispatch({type: Delete_Material, payload: id})
     }).catch(error => console.log(error, "deleteMaterial action error"))
 }
