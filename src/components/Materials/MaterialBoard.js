@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
-import { fetchMaterial, createMaterial } from '../../actions/materialActions';
+import { fetchMaterial, createMaterial, deleteMaterial } from '../../actions/materialActions';
 
 
 function MaterialBoard(props){
-const {materials, createNewMaterial, fetchMaterial} = props
+const {materials, createNewMaterial, fetchMaterial, deleteMaterial} = props
 
 useEffect(() => {
     fetchMaterial()
@@ -21,6 +21,7 @@ const [selectedMaterial, setSelectedMaterial] = useState(0)
 const handleChange = e => {
     setNewMaterial({...newMaterial, [e.target.name]: e.target.value})
 }
+
 
 
 
@@ -69,6 +70,10 @@ const sendMaterial = (e) => {
                         } 
                     
                     }
+                    const removeMaterial = (e) => {
+                        e.preventDefault()
+                        deleteMaterial(id)
+                        }
                     return(
                 <section key={id} style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"} | selectedMaterial === id? {backgroundColor: 'red'}: {display: 'inherit'}} onClick={selectMaterial} >
                    <section style={{display:'flex', justifyContent: 'space-between', width: "100%"}}>                    
@@ -77,7 +82,7 @@ const sendMaterial = (e) => {
                     </section>
                    <section style={ selectedMaterial === id?  {display:'flex', justifyContent: 'center'}: {display: 'none'}}>
                        <form>
-                           <button>Delete</button>
+                           <button  onClick={removeMaterial}>Delete</button>
                        </form>
                        </section> 
 
@@ -96,4 +101,4 @@ const mapStateToProps = state => {
     };
   };
 
-export default connect(mapStateToProps, {fetchMaterial, createMaterial})(MaterialBoard);
+export default connect(mapStateToProps, {fetchMaterial, createMaterial, deleteMaterial})(MaterialBoard);
