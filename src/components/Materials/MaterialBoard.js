@@ -62,7 +62,7 @@ const sendMaterial = (e) => {
                 </div>
 
             </section>
-            <section style={{display: 'flex', flexDirection: 'column ', justifyContent: 'space-around', width: '70%', height: "100%", overflow: "scroll"}}>
+            <section style={{display: 'flex', flexDirection: 'column ', justifyContent: 'space-around', width: '70%', height: "100%"}}>
             <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"}}> 
                        <h4>Tag #</h4>
                        <h4>Name</h4>
