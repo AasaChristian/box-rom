@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import { fetchMaterial, createMaterial, deleteMaterial } from '../../actions/materialActions';
+import Pulse from 'react-reveal/Pulse';
 
 
 function MaterialBoard(props){
-const {materials, createNewMaterial, fetchMaterial, deleteMaterial} = props
+const {materials, createNewMaterial, fetchMaterial, deleteMaterial, loading} = props
 
 useEffect(() => {
     fetchMaterial()
@@ -43,6 +44,10 @@ const sendMaterial = (e) => {
             <section>
                 <h1>Materials</h1>
             </section>
+            <div style={{display: 'flex', justifyContent: 'center'}}>   
+                    {loading &&  <Pulse  delay={500}  forever={true} >
+                    <h1 style={{color: 'black', fontSize: '500%', position: "fixed"}}>LOADING</h1>
+                </Pulse >}</div>
             <section>
                 <div><h3>Create New Material</h3></div>
                 <div><h3>{newMaterial.tagNumber}</h3> <h3>{newMaterial.materialname}</h3> </div>
