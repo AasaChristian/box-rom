@@ -32,7 +32,7 @@ console.log(materials, "materials")
 <MaterialBoard
 createNewMaterial = {createNewMaterial}
 />
-<ImgInput/>
+{/* <ImgInput/> */}
 
 
     </div>
