@@ -84,7 +84,7 @@ const sendMaterial = (e) => {
                         deleteMaterial(id)
                         }
                     return(
-                <section key={id} style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"} | selectedMaterial === id? {backgroundColor: 'red'}: {display: 'inherit'}} onClick={selectMaterial} >
+                <section key={id} style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"} | selectedMaterial === id? {backgroundColor: '#07fcff1a' , borderRadius: "10%"}: {display: 'inherit'}} onClick={selectMaterial} >
                    <section style={{display:'flex', justifyContent: 'space-between', width: "100%"}}>                    
                     <div><h5>{tagNumber}</h5></div>
                     <div><h5>{materialname}</h5></div>
