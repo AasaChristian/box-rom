@@ -64,8 +64,8 @@ const sendMaterial = (e) => {
             </section>
             <section style={{display: 'flex', flexDirection: 'column ', justifyContent: 'space-around', width: '70%', height: "100%"}}>
             <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"}}> 
-                       <h4>Tag #</h4>
-                       <h4>Name</h4>
+                       <h4 style={{borderBottom: "2px solid black"}}>Tag #</h4>
+                       <h4 style={{borderBottom: "2px solid black"}}>Name</h4>
                    </div>
                 {materials.map((material) => {
                     const {materialname, tagNumber, id} = material
