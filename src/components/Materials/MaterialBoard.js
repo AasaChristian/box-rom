@@ -139,7 +139,7 @@ function MaterialBoard(props) {
                   width: "100%",
                 } |
                 (selectedMaterial === id)
-                  ? { backgroundColor: "#07fcff1a", borderRadius: "10%" }
+                  ? { backgroundColor: "#07fcff1a", borderRadius: "10%", border: "2px solid #00000038" }
                   : { display: "inherit" }
               }
               onClick={selectMaterial}
