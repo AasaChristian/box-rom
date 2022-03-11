@@ -50,7 +50,7 @@ const sendMaterial = (e) => {
                 </Pulse >}</div>
             <section>
                 <div><h3>Create New Material</h3></div>
-                <div><h3>{newMaterial.tagNumber}</h3> <h3>{newMaterial.materialname}</h3> </div>
+                <div style={{display: 'flex' , position: "fixed"}}><h3>{newMaterial.tagNumber}</h3> <h3>{newMaterial.materialname}</h3> </div>
 
                 <div>
                     <form onSubmit={sendMaterial}>
