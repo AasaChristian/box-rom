@@ -40,7 +40,7 @@ const sendMaterial = (e) => {
     })
 }
     return(
-        <div style={{display: 'flex',flexDirection: 'column ', alignItems: 'center', width: '100%', height: '500px'}}>
+        <div style={{display: 'flex',flexDirection: 'column ', alignItems: 'center', width: '100%'}}>
             <section>
                 <h1>Materials</h1>
             </section>
@@ -86,8 +86,8 @@ const sendMaterial = (e) => {
                     return(
                 <section key={id} style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row',  width: "100%"} | selectedMaterial === id? {backgroundColor: 'red'}: {display: 'inherit'}} onClick={selectMaterial} >
                    <section style={{display:'flex', justifyContent: 'space-between', width: "100%"}}>                    
-                    <div>{tagNumber}</div>
-                    <div>{materialname}</div>
+                    <div><h5>{tagNumber}</h5></div>
+                    <div><h5>{materialname}</h5></div>
                     </section>
                    <section style={ selectedMaterial === id?  {display:'flex', justifyContent: 'center'}: {display: 'none'}}>
                        <form>
