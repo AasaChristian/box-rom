@@ -1,33 +1,35 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import { connect } from 'react-redux';
-import Trailer from './components/trailer/Trailer';
+import TrailerBoard from './components/trailer/TrailerBoard';
 import MaterialBoard from './components/Materials/MaterialBoard'
 import ImgInput from './components/ImgInput'
 import { fetchMaterial, createMaterial } from './actions/materialActions';
+import {  fetchTrailer, createTrailer } from './actions/trailerActions';
+
 
 function App(props) {
 
-  const {materials, fetchMaterial, createMaterial} = props
+  const {createMaterial, createTrailer} = props
 
   const createNewMaterial = ((newMaterial) => {
     createMaterial(newMaterial)
   })
 
-//   useEffect(() => {
-//     fetchMaterial()
-// }, [])
-
-console.log(materials, "materials")
-
+  const createNewTrailer = ((newTrailer) => {
+    createTrailer(newTrailer)
+  })
 
   return (
     <div className="App">
       <section>
         <h1>Box Room Assist Tool</h1>
         </section>
-{/* <Trailer
-/> */}
+
+        
+<TrailerBoard
+createNewTrailer={createNewTrailer}
+/>
 
 <MaterialBoard
 createNewMaterial = {createNewMaterial}
@@ -42,9 +44,8 @@ createNewMaterial = {createNewMaterial}
 
 const mapStateToProps = state => {
   return {
-        materials: state.materials,
         loading: state.loading
   };
 };
 
-export default connect(mapStateToProps, {fetchMaterial, createMaterial})(App);
+export default connect(mapStateToProps, { createMaterial, createTrailer})(App);
